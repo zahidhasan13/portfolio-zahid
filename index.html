@@ -4,7 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zahid Portfolio</title>
+
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -12,47 +14,72 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
     <link rel="stylesheet" href="./css/style.css" />
   </head>
-  <body class="bg-black text-white">
+
+  <body class="bg-black text-white overflow-x-hidden">
     <!-- Header Start -->
-    <header>
+    <header class="fixed left-0 right-0 top-0 w-full z-10">
       <div class="flex items-center justify-between p-4">
         <div class="relative z-[1000]">
           <span class="font-bold text-2xl md:text-4xl">Zahid Hasan.</span>
         </div>
+
         <div class="relative z-[1000]">
-          <div class="flex flex-col space-y-2 cursor-pointer" id="menu-btn">
-            <div class="w-10 h-[2px] bg-white"></div>
-            <div class="w-8 h-[2px] bg-white"></div>
-            <div class="w-6 h-[2px] bg-white"></div>
+          <div id="menu-btn">
+            <div class="flex flex-col space-y-2 cursor-pointer" id="open-menu">
+              <div class="w-10 h-[2px] bg-white"></div>
+              <div class="w-8 h-[2px] bg-white"></div>
+              <div class="w-6 h-[2px] bg-white"></div>
+            </div>
+
+            <div
+              class="relative w-10 h-10 hidden cursor-pointer"
+              id="close-menu"
+            >
+              <div
+                class="absolute top-1/2 left-0 w-10 h-[2px] bg-white -translate-y-1/2 rotate-45"
+              ></div>
+
+              <div
+                class="absolute top-1/2 left-0 w-10 h-[2px] bg-white -translate-y-1/2 -rotate-45"
+              ></div>
+            </div>
           </div>
         </div>
       </div>
+
       <!-- Navigation -->
       <nav
-        class="absolute top-0 left-0 z-[999] w-full h-screen bg-red-500 grid grid-cols-2 items-center justify-between space-y-8 md:px-20"
+        class="absolute top-0 left-0 z-[999] w-full min-h-screen bg-red-300 grid grid-cols-1 md:grid-cols-2 items-center gap-10 md:gap-0 px-6 sm:px-8 md:px-20 py-24 md:py-0"
         id="menu"
       >
-        <div class="border-r border-white pr-8">
+        <!-- Left Side -->
+        <div
+          class="border-b md:border-b-0 md:border-r border-white pb-8 md:pb-0 md:pr-8"
+        >
           <ul
-            class="flex flex-col items-start space-y-20 text-[72px] font-semibold leading-none"
+            class="flex flex-col items-start space-y-8 md:space-y-20 text-4xl sm:text-5xl md:text-[72px] font-semibold leading-none"
           >
             <li
               class="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full"
             >
               <a href="#home">Home</a>
             </li>
+
             <li
               class="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full"
             >
               <a href="#about">About</a>
             </li>
+
             <li
               class="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full"
             >
               <a href="#portfolio">Portfolio</a>
             </li>
+
             <li
               class="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full"
             >
@@ -60,11 +87,18 @@
             </li>
           </ul>
         </div>
-        <div class="flex flex-col items-start space-y-4 pl-8">
-          <span class="social-title text-4xl border-b-2 border-white"
-            >Social Media</span
+
+        <!-- Right Side -->
+        <div class="flex flex-col items-start space-y-4 md:pl-8">
+          <span
+            class="social-title text-2xl sm:text-3xl md:text-4xl border-b-2 border-white"
           >
-          <div class="social-icons flex space-x-4 text-4xl">
+            Social Media
+          </span>
+
+          <div
+            class="social-icons flex space-x-4 text-2xl sm:text-3xl md:text-4xl"
+          >
             <a href="#"><i class="fab fa-facebook"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>
             <a href="#"><i class="fab fa-linkedin"></i></a>
@@ -74,6 +108,152 @@
       </nav>
     </header>
     <!-- Header End -->
+    <!-- Hero Start -->
+    <section class="hero-section min-h-screen w-full relative overflow-hidden">
+      <!-- Video Background -->
+      <div
+        class="video-wrapper absolute top-0 left-0 w-full h-full overflow-hidden -z-10"
+      >
+        <video
+          id="video"
+          src="./assets/Hero-Video.mp4"
+          class="w-full h-full object-cover"
+          muted
+          playsinline
+        ></video>
+      </div>
+
+      <!-- Hero Content -->
+      <div
+        class="hero-content-wrapper flex items-center justify-center h-screen"
+      >
+        <h1
+          class="hero-title text-5xl sm:text-7xl md:text-8xl lg:text-[120px] xl:text-[160px] 2xl:text-[200px] uppercase font-semibold text-center px-4"
+        >
+          web developer
+        </h1>
+      </div>
+
+      <!-- Floating Icons -->
+      <div class="hero-icon-wrapper absolute inset-0 pointer-events-none">
+        <!-- Top Left -->
+        <div
+          class="floating-img bg-white w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 flex items-center justify-center rounded-lg absolute top-10 md:top-20 left-4 md:left-[400px]"
+        >
+          <img
+            src="./assets/html.png"
+            alt="Html"
+            class="w-10 md:w-14 lg:w-20"
+          />
+        </div>
+
+        <!-- Top Right -->
+        <div
+          class="floating-img bg-white w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 flex items-center justify-center rounded-lg absolute top-10 md:top-20 right-4 md:right-[400px]"
+        >
+          <img src="./assets/css.png" alt="Css" class="w-8 md:w-12 lg:w-14" />
+        </div>
+
+        <!-- Mid Left -->
+        <div
+          class="floating-img bg-white w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 flex items-center justify-center rounded-lg absolute top-40 md:top-60 left-2 md:left-[300px]"
+        >
+          <img
+            src="./assets/Tailwind_CSS_Logo.svg.png"
+            alt="Tailwind"
+            class="w-8 md:w-12 lg:w-14"
+          />
+        </div>
+
+        <!-- Mid Right -->
+        <div
+          class="floating-img bg-white w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 flex items-center justify-center rounded-lg absolute top-40 md:top-60 right-2 md:right-[300px]"
+        >
+          <img src="./assets/gsap.png" alt="GSAP" class="w-8 md:w-12 lg:w-14" />
+        </div>
+
+        <!-- Bottom Mid Left -->
+        <div
+          class="floating-img bg-white w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 flex items-center justify-center rounded-lg absolute bottom-40 md:bottom-60 left-2 md:left-[300px]"
+        >
+          <img
+            src="./assets/expressjs.png"
+            alt="Express.js"
+            class="w-8 md:w-12 lg:w-14"
+          />
+        </div>
+
+        <!-- Bottom Mid Right -->
+        <div
+          class="floating-img bg-white w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 flex items-center justify-center rounded-lg absolute bottom-40 md:bottom-60 right-2 md:right-[300px]"
+        >
+          <img
+            src="./assets/Node.js_logo.svg.png"
+            alt="Node.js"
+            class="w-8 md:w-12 lg:w-14"
+          />
+        </div>
+
+        <!-- Bottom Left -->
+        <div
+          class="floating-img bg-white w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 flex items-center justify-center rounded-lg absolute bottom-10 md:bottom-20 left-4 md:left-[400px]"
+        >
+          <img
+            src="./assets/carrd.png"
+            alt="Carrd"
+            class="w-8 md:w-12 lg:w-14"
+          />
+        </div>
+
+        <!-- Bottom Right -->
+        <div
+          class="floating-img bg-white w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 flex items-center justify-center rounded-lg absolute bottom-10 md:bottom-20 right-4 md:right-[400px]"
+        >
+          <img
+            src="./assets/webflow-icon.webp"
+            alt="Webflow"
+            class="w-8 md:w-12 lg:w-14"
+          />
+        </div>
+
+        <!-- Center Top -->
+        <div
+          class="floating-img hidden md:flex bg-white w-20 h-20 lg:w-24 lg:h-24 items-center justify-center rounded-lg absolute top-60 right-2/5"
+        >
+          <img
+            src="./assets/React-icon.svg.png"
+            alt="React"
+            class="w-12 lg:w-14"
+          />
+        </div>
+
+        <!-- Center Top -->
+        <div
+          class="floating-img hidden md:flex bg-white w-20 h-20 lg:w-24 lg:h-24 items-center justify-center rounded-lg absolute top-60 left-2/5"
+        >
+          <img src="./assets/js.png" alt="JavaScript" class="w-12 lg:w-14" />
+        </div>
+
+        <!-- Center Bottom -->
+        <div
+          class="floating-img hidden md:flex bg-white w-20 h-20 lg:w-24 lg:h-24 items-center justify-center rounded-lg absolute bottom-60 left-2/5"
+        >
+          <img src="./assets/redux.png" alt="Redux" class="w-12 lg:w-14" />
+        </div>
+
+        <!-- Center Bottom -->
+        <div
+          class="floating-img hidden md:flex bg-white w-20 h-20 lg:w-24 lg:h-24 items-center justify-center rounded-lg absolute bottom-60 right-2/5"
+        >
+          <img src="./assets/nextjs.png" alt="Next.js" class="w-12 lg:w-14" />
+        </div>
+      </div>
+    </section>
+    <!-- Hero End -->
+
+    <!-- Test -->
+    <section style="height: 400vh"></section>
+    <!-- Test -->
 
     <!-- Script -->
     <script
@@ -82,6 +262,8 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+
     <script src="./js/app.js"></script>
   </body>
 </html>
