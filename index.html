@@ -4,6 +4,84 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zahid Portfolio</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
-  <body></body>
+  <body class="bg-black text-white">
+    <!-- Header Start -->
+    <header>
+      <div class="flex items-center justify-between p-4">
+        <div class="relative z-[1000]">
+          <span class="font-bold text-2xl md:text-4xl">Zahid Hasan.</span>
+        </div>
+        <div class="relative z-[1000]">
+          <div class="flex flex-col space-y-2 cursor-pointer" id="menu-btn">
+            <div class="w-10 h-[2px] bg-white"></div>
+            <div class="w-8 h-[2px] bg-white"></div>
+            <div class="w-6 h-[2px] bg-white"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Navigation -->
+      <nav
+        class="absolute top-0 left-0 z-[999] w-full h-screen bg-red-500 grid grid-cols-2 items-center justify-between space-y-8 md:px-20"
+        id="menu"
+      >
+        <div class="border-r border-white pr-8">
+          <ul
+            class="flex flex-col items-start space-y-20 text-[72px] font-semibold leading-none"
+          >
+            <li
+              class="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full"
+            >
+              <a href="#home">Home</a>
+            </li>
+            <li
+              class="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full"
+            >
+              <a href="#about">About</a>
+            </li>
+            <li
+              class="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full"
+            >
+              <a href="#portfolio">Portfolio</a>
+            </li>
+            <li
+              class="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full"
+            >
+              <a href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <div class="flex flex-col items-start space-y-4 pl-8">
+          <span class="social-title text-4xl border-b-2 border-white"
+            >Social Media</span
+          >
+          <div class="social-icons flex space-x-4 text-4xl">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- Header End -->
+
+    <!-- Script -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
+      integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="./js/app.js"></script>
+  </body>
 </html>
